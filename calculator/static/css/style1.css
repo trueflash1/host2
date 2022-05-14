@@ -1,0 +1,1107 @@
+
+
+
+
+
+/* =============================================================================
+   1. General Styles
+============================================================================= */
+/* Body
+============================================================================= */
+
+
+body{
+    margin: 0;
+    padding: 0;
+    color: #515151;
+    overflow-x: hidden;
+    font-weight: normal;
+    background-color: #ebebeb;
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+    -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+
+
+
+
+
+/* List
+============================================================================= */
+/* Wrapper
+----------------------------------------------------------------------------- */
+ol,
+ul {
+    padding: 0;
+    margin: 20px auto 15px;
+    list-style-position: inside;
+}
+ol:first-child,
+ul:first-child {
+    margin-top: -5px;
+}
+ol:last-child,
+ul:last-child {
+    margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+    float: left;
+    position: relative;
+    margin-right: 20px;
+}
+ul.list-icon-style-1 li:last-of-type { margin-right: 0; }
+
+
+
+/* List Info
+============================================================================= */
+/* Wrapper
+----------------------------------------------------------------------------- */
+ul.list-info {
+    margin: 0;
+    width: 100%;
+    padding: 25px;
+    display: block;
+    overflow: hidden;
+    list-style: none;
+    border-radius: 2px;
+    border: 2px solid #dddddd;
+}
+
+
+/* List
+----------------------------------------------------------------------------- */
+ul.list-info > li {
+    width: 100%;
+    display: block;
+    font-weight: 500;
+    margin-top: 15px;
+    padding-top: 15px;
+    position: relative;
+    border-top: 1px solid #dddddd;
+}
+ul.list-info > li:first-child {
+    border-top: 0;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+
+/* First Div
+----------------------------------------------------------------------------- */
+ul.list-info > li > div:first-child { margin-bottom: 5px; }
+
+
+/* Social Icons
+----------------------------------------------------------------------------- */
+ul.list-info > li .social-icons-block ul li {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/* Style 1
+============================================================================= */
+/* Items
+----------------------------------------------------------------------------- */
+ul.list-info-style-1 > li {
+    float: left;
+    width: 48.5%;
+    line-height: 32px;
+}
+ul.list-info-style-1 > li:nth-child(2n) {
+    float: right;
+}
+ul.list-info-style-1 > li:nth-child(2) {
+    border-top: 0;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+
+/* Divs
+----------------------------------------------------------------------------- */
+ul.list-info-style-1 > li > div:first-child {
+    float: left;
+    margin-bottom: 0;
+}
+ul.list-info-style-1 > li > div:last-child { float: right; }
+
+
+
+/* Ripple Animation
+============================================================================= */
+/* Wrapper
+----------------------------------------------------------------------------- */
+.wave-effect {
+    z-index: 15;
+    overflow: hidden;
+    position: relative;
+}
+
+
+/* Ripple
+----------------------------------------------------------------------------- */
+.lpbuilder-ripple {
+    width: 0;
+    height: 0;
+    opacity: 1;
+    border-radius: 50%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.30);
+
+    -webkit-transform: scale(0);
+       -moz-transform: scale(0);
+        -ms-transform: scale(0);
+         -o-transform: scale(0);
+            transform: scale(0);
+}
+
+
+/* Animation
+----------------------------------------------------------------------------- */
+.ripple-animation {
+    -webkit-animation: rippleCircleAnimation 1.5s linear;
+            animation: rippleCircleAnimation 1.5s linear;
+}
+@-webkit-keyframes rippleCircleAnimation {
+    100% {
+        -webkit-transform: scale(5);
+        opacity: 0;
+    }
+}
+@keyframes rippleCircleAnimation {
+    100% {
+        transform: scale(5);
+        opacity: 0;
+    }
+}
+
+
+
+/* White Content
+============================================================================= */
+.white-content,
+.white-content p,
+.white-content h1,
+.white-content h2,
+.white-content h3,
+.white-content h4,
+.white-content h5,
+.white-content h6,
+.white-content a:hover,
+.white-content .form-control,
+.white-content .form-group label {
+    color: #ffffff;
+}
+
+.white-content .line-separator,
+.white-content .form-group label::before {
+    background-color: #ffffff;
+}
+.white-content .form-group label::before { opacity: 0.30; }
+
+
+
+/* Triangle Arrow
+============================================================================= */
+/* Wrapper
+----------------------------------------------------------------------------- */
+.triangle-arrow {
+    width: 0;
+    height: 0;
+    left: 25%;
+    z-index: 20;
+    margin-left: 12px;
+    position: absolute;
+    border-top: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+}
+
+
+/* White
+----------------------------------------------------------------------------- */
+.triangle-arrow.white-arrow { border-top: 15px solid #ffffff; }
+
+
+/* Grey
+----------------------------------------------------------------------------- */
+.triangle-arrow.grey-arrow { border-top: 15px solid #f7f7f7; }
+
+
+
+/* Label
+============================================================================= */
+.label {
+    font-weight: 600;
+    border-radius: 2px;
+    padding: 5px 15px 3px;
+}
+.label-main { background-color: #e74c3c; }
+
+
+
+
+/* =============================================================================
+   2. Typography
+============================================================================= */
+/* Heading
+============================================================================= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    color: #121212;
+    letter-spacing: 0;
+    margin: 0 auto 10px;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+h2 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+h3 { font-size: 26px; font-weight: 600; line-height: 1.3; }
+h4 { font-size: 20px; font-weight: 600; line-height: 1.3; }
+h5 { font-size: 18px; font-weight: 500; line-height: 1.4; }
+h6 { font-size: 16px; font-weight: 600; line-height: 1.4; }
+
+
+
+/* Montserrat Font
+============================================================================= */
+h1,
+h2,
+.tooltip,
+.btn-lpbuilder,
+.navbar-brand,
+.btn-lpbuilder-white {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+
+
+/* Poppins Font
+============================================================================= */
+.popover {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+
+
+/* Paragraph
+============================================================================= */
+p { margin: 0 0 15px 0; }
+p:last-of-type { margin-bottom: 0; }
+
+
+
+/* Large Heading
+============================================================================= */
+.lg-heading,
+.title-block-container.text-center .lg-heading {
+    font-size: 150px;
+}
+
+
+
+/* Small Heading
+============================================================================= */
+.sm-heading,
+.title-block-container.text-center .sm-heading {
+    font-size: 45px;
+}
+
+
+
+/* Small Paragraph
+============================================================================= */
+.sm-p,
+.hero-section .title-block-container.text-center p.sm-p {
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+
+
+
+/* =============================================================================
+   3. Loader Block
+============================================================================= */
+/* Wrapper
+----------------------------------------------------------------------------- */
+.loader-block {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 999999;
+    position: fixed;
+    text-align: center;
+    background-color: #ffffff;
+}
+.no-js .loader-block { display: none; }
+
+
+/* Container
+----------------------------------------------------------------------------- */
+.loader-block-container {
+    top: 50%;
+    left: 50%;
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+
+    -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+         -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+
+
+/* Circle Block
+----------------------------------------------------------------------------- */
+.circle-block {
+    margin: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    position: relative;
+    border: 4px solid #dddddd;
+
+    -webkit-animation: lpbuilder-spin 0.75s infinite linear;
+            animation: lpbuilder-spin 0.75s infinite linear;
+}
+.circle-block::before,
+.circle-block::after {
+    top: -4px;
+    left: -4px;
+    content: '';
+    display: none;
+    width: inherit;
+    height: inherit;
+    border: inherit;
+    position: absolute;
+    border-radius: inherit;
+}
+
+
+/* Animation
+============================================================================= */
+@-webkit-keyframes lpbuilder-spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes lpbuilder-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
+
+/* Style 1
+============================================================================= */
+.circle-block-style-1 { border-top-width: 0; }
+
+
+
+/* Style 2
+============================================================================= */
+.circle-block-style-2 { border-top-color: transparent; }
+.circle-block-style-2::after {
+    display: block;
+
+    -webkit-transform: rotate(65deg);
+       -moz-transform: rotate(65deg);
+        -ms-transform: rotate(65deg);
+         -o-transform: rotate(65deg);
+            transform: rotate(65deg);
+}
+
+
+
+/* Style 3
+============================================================================= */
+.circle-block-style-3 {
+    border-color: transparent;
+    border-top-color: #dddddd;
+}
+.circle-block-style-3::after,
+.circle-block-style-3::before {
+    display: block;
+
+    -webkit-animation-duration: 1.2s;
+            animation-duration: 1.2s;
+}
+.circle-block-style-3::before {
+    -webkit-transform: rotate(120deg);
+       -moz-transform: rotate(120deg);
+        -ms-transform: rotate(120deg);
+         -o-transform: rotate(120deg);
+            transform: rotate(120deg);
+}
+.circle-block-style-3::after {
+    -webkit-transform: rotate(240deg);
+       -moz-transform: rotate(240deg);
+        -ms-transform: rotate(240deg);
+         -o-transform: rotate(240deg);
+            transform: rotate(240deg);
+}
+
+
+
+/* Style 4
+============================================================================= */
+.circle-block-style-4 { border-top-color: transparent; }
+.circle-block-style-4::after {
+    display: block;
+    border-color: transparent;
+    border-top-color: #dddddd;
+
+    -webkit-animation: lpbuilder-spin 1.25s infinite linear reverse;
+            animation: lpbuilder-spin 1.25s infinite linear reverse;
+}
+
+
+
+/* Style 5
+============================================================================= */
+.circle-block-style-5 {
+    border-color: transparent;
+    border-top-color: #dddddd;
+
+    -webkit-animation: lpbuilder-spin 1s infinite ease;
+            animation: lpbuilder-spin 1s infinite ease;
+}
+.circle-block-style-5::after {
+    display: block;
+
+    -webkit-animation: lpbuilder-spin 1.5s infinite ease;
+            animation: lpbuilder-spin 1.5s infinite ease;
+}
+
+
+
+/* Style 6
+============================================================================= */
+.circle-block-style-6 {
+    border-color: transparent;
+    border-top-color: #dddddd;
+
+    -webkit-animation: lpbuilder-spin 1s infinite ease-in-out alternate;
+            animation: lpbuilder-spin 1s infinite ease-in-out alternate;
+}
+.circle-block-style-6::after {
+    display: block;
+
+    -webkit-animation: lpbuilder-spin 1.5s infinite ease-in-out alternate;
+            animation: lpbuilder-spin 1.5s infinite ease-in-out alternate;
+}
+
+
+
+
+/* =============================================================================
+   4. Main Wrapper
+============================================================================= */
+/* Wrapper
+----------------------------------------------------------------------------- */
+#main-wrapper {
+    padding: 0;
+    z-index: 2;
+    opacity: 1;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    min-height: 100vh;
+    max-width: 1600px;
+    position: relative;
+    background-color: #ffffff;
+
+    -webkit-transition: all 0.50s ease-in-out;
+       -moz-transition: all 0.50s ease-in-out;
+         -o-transition: all 0.50s ease-in-out;
+            transition: all 0.50s ease-in-out;
+}
+.no-js #main-wrapper { opacity: 1; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Toggle
+----------------------------------------------------------------------------- */
+/* Container
+--------------------------------------------------------- */
+.navbar-toggle.lpbuilder-toggle > span {
+    -webkit-animation: lpbuilderToggleAnimationSpan 1s forwards;
+            animation: lpbuilderToggleAnimationSpan 1s forwards;
+}
+@-webkit-keyframes lpbuilderToggleAnimationSpan {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(-180deg);
+    }
+}
+@keyframes lpbuilderToggleAnimationSpan {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-180deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Middle Line
+--------------------------------------------------------- */
+.navbar-toggle.lpbuilder-toggle > span i.lines {
+    -webkit-animation: lpbuilderToggleAnimationLines 1s forwards;
+            animation: lpbuilderToggleAnimationLines 1s forwards;
+}
+@-webkit-keyframes lpbuilderToggleAnimationLines {
+    0%, 50% {
+        background-color: #000000;
+    }
+    51%, 100% {
+        background-color: transparent;
+    }
+}
+@keyframes lpbuilderToggleAnimationLines {
+    0%, 50% {
+        background-color: #000000;
+    }
+    51%, 100% {
+        background-color: transparent;
+    }
+}
+
+/* Bototm Line
+--------------------------------------------------------- */
+.navbar-toggle.lpbuilder-toggle > span i.lines:after {
+    -webkit-animation: lpbuilderToggleAnimationAfter 1s forwards;
+            animation: lpbuilderToggleAnimationAfter 1s forwards;
+}
+@-webkit-keyframes lpbuilderToggleAnimationAfter {
+    0% {
+        bottom: -6px;
+    }
+    50% {
+        bottom: 0;
+        -webkit-transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+@keyframes lpbuilderToggleAnimationAfter {
+    0% {
+        bottom: -6px;
+    }
+    50% {
+        bottom: 0;
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+/* Top Line
+--------------------------------------------------------- */
+.navbar-toggle.lpbuilder-toggle > span i.lines:before {
+    -webkit-animation: lpbuilderToggleAnimationBefore 1s forwards;
+            animation: lpbuilderToggleAnimationBefore 1s forwards;
+}
+@-webkit-keyframes lpbuilderToggleAnimationBefore {
+    0% {
+        top: -6px;
+    }
+    50% {
+        top: 0;
+        -webkit-transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(-45deg);
+    }
+}
+@keyframes lpbuilderToggleAnimationBefore {
+    0% {
+        top: -6px;
+    }
+    50% {
+        top: 0;
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ul.navbar-nav > li > ul.sub-menu li {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+ul.navbar-nav > li > ul.sub-menu li a {
+    width: 100%;
+    opacity: 0.75;
+    display: block;
+    color: #121212;
+    font-size: 14px;
+    font-weight: 500;
+    overflow: hidden;
+    line-height: 22px;
+    padding: 10px 20px;
+    position: relative;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Special Buttons
+============================================================================= */
+/* Wrapper
+----------------------------------------------------------------------------- */
+.btn-lpbuilder,
+.btn-lpbuilder-white {
+    border: 0;
+    z-index: 15;
+    font-size: 14px;
+    overflow: hidden;
+    font-weight: 700;
+    line-height: 24px;
+    position: relative;
+    padding: 10px 30px;
+    border-radius: 2px;
+    margin: 30px 10px 0 0;
+    outline: none !important;
+
+}
+
+.btn-lpbuilder-white * {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Main Button
+----------------------------------------------------------------------------- */
+.btn-lpbuilder,
+.btn-lpbuilder:focus {
+    color: #ffffff !important;
+    background-color: #e74c3c !important;
+
+}
+
+.btn-lpbuilder-link {
+}
+.btn-lpbuilder-link:last-child { margin-right: 0; }
+
+
+
+----------------------------------------------------------------------------- */
+.btn-lpbuilder-link::after {
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Dots
+--------------------------------------------------------- */
+.swiper-pagination-tumbs span {
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Container
+----------------------------------------------------------------------------- */
+.title-block-container {
+    padding: 0;
+    width: 100%;
+    z-index: 15;
+    display: block;
+    font-size: 18px;
+    position: relative;
+    margin: 0 auto 15px;
+
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+.title-block-container::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+
+/* Text Center
+----------------------------------------------------------------------------- */
+.title-block-container.text-center { margin-bottom: 30px; }
+.title-block-container.text-center p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+
+
+
+
+
+/* Typography
+----------------------------------------------------------------------------- */
+/* h1
+--------------------------------------------------------- */
+.title-block-container h1 { margin-top: -5px; }
+.title-block-container.text-center h1 {
+    line-height: 1;
+    font-size: 60px;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+
+/* h2
+--------------------------------------------------------- */
+.title-block-container h2 { margin-top: -5px; }
+.title-block-container h2 + h3 { margin-top: -5px; }
+
+
+/* Line Separator
+----------------------------------------------------------------------------- */
+.line-separator {
+    width: 40px;
+    height: 3px;
+    display: block;
+    margin: 20px 0 10px;
+    background-color: #121212;
+}
+.text-center .line-separator { margin: 25px auto; }
+.line-separator + h4 { margin-top: 25px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =============================================================================
+   27. Form Elements
+============================================================================= */
+/* Form Group
+============================================================================= */
+.form-group {
+    width: 100%;
+    display: block;
+    line-height: 0;
+    position: relative;
+    margin: 0 auto 30px;
+
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+
+
+
+/* Form Control
+============================================================================= */
+/* Wrapper
+----------------------------------------------------------------------------- */
+.form-control {
+    border: 0;
+    z-index: 2;
+    height: 44px;
+    color: #121212;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 0;
+    line-height: 24px;
+    position: relative;
+    background-color: transparent;
+
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+    background-color: transparent;
+}
+/* Textarea
+============================================================================= */
+textarea.form-control {
+    resize: none;
+    height: 70px;
+}
+
+
+
+/* Label
+============================================================================= */
+/* Wrapper
+----------------------------------------------------------------------------- */
+.form-group label {
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    cursor: text;
+    display: block;
+    color: #515151;
+    margin: 0 auto;
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: left;
+    line-height: 24px;
+    position: absolute;
+
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+
+    -webkit-transition: all 0.30s ease-in-out;
+       -moz-transition: all 0.30s ease-in-out;
+         -o-transition: all 0.30s ease-in-out;
+            transition: all 0.30s ease-in-out;
+}
+textarea.form-control + label { padding: 10px 0 36px; }
+
+----------------------------------------------------------------------------- */
+.select-menu-input.error { border-color: #ff0000; }
+.select-menu-input.error + label::after { background-color: transparent; }
+
+
+
+/* Button
+============================================================================= */
+/* Wrapper
+----------------------------------------------------------------------------- */
+.form-block-container button { margin: 0 auto !important; }
+
+
+
+/* =============================================================================
+   28. Form Block
+============================================================================= */
+/* Wrapper
+----------------------------------------------------------------------------- */
+.form-block {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+/* Container
+----------------------------------------------------------------------------- */
+.form-block-container {
+    width: 100%;
+    z-index: 20;
+    display: block;
+    margin: 0 auto;
+    padding-top: 9px;
+    position: relative;
+}
+.form-block-container::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+.form-block-container.text-center { padding-top: 0; }
+
+
+/* 28.1 Subscribe Form Block
+============================================================================= */
+/* Button
+----------------------------------------------------------------------------- */
+.subscribe-form-block .form-block-container button {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+/* Hero Section
+----------------------------------------------------------------------------- */
+.hero-section .subscribe-form-block {
+    margin-top: 35px;
+    margin-bottom: 5px;
+}

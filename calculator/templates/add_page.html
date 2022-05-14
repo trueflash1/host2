@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]>    <html lang="ru"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="ru" class="no-js" xmlns="http://www.w3.org/1999/html">
+<!--<![endif]--><!-- head
+
+    ============================================================================ --><head>
+
+
+        <!-- Basic Info
+        ======================================================================== -->
+        <title>Home Page</title>
+        <meta charset="utf-8">
+
+    <style type="text/css">
+       TABLE {
+
+        width: 70%; /* Ширина таблицы */
+        border: 1px solid black; /* Рамка вокруг таблицы */
+       }
+       TD, TH {
+        width: 10px; /* Ширина таблицы */
+        text-align: center;
+        padding: 3px; /* Поля вокруг содержимого ячеек */
+        border: 1px solid black; /* Рамка вокруг ячейки */
+       }
+       TH {
+        width: 20px; /* Ширина таблицы */
+        text-align: center; /* Выравнивание по левому краю */
+        background: #5d8291; /* Цвет фона */
+        color: white; /* Цвет текста */
+       }
+       tr:nth-child(even) {
+          background: #e4e7e8;
+          text-align: right;
+        }
+       .dell {
+        background: #e27f75; /* Синий цвет фона */
+        color: white; /* Белые буквы */
+        font-size: 10pt; /* Размер шрифта в пунктах */
+       }
+       .edit {
+        background: #6fbca0; /* Синий цвет фона */
+        color: white; /* Белые буквы */
+        font-size: 10pt; /* Размер шрифта в пунктах */
+       }
+       .add {
+        background: #79a1e2; /* Синий цвет фона */
+        color: white; /* Белые буквы */
+        font-size: 10pt; /* Размер шрифта в пунктах */
+       }
+       .input {width: 100%; min-width: 120px; height: 30px; text-align: center}
+       .input1 {width: 100%; min-width: 120px; height: 30px; text-align: center}
+       .inputCheck {width: 100%; height: 20px; text-align: center}
+       .input1 {width: 100%; height: 100%; text-align: center}
+       .inputNT {width: 30%; height: 35px; text-align: center; font-size: 25px; border-radius: 0.5rem}
+       .type {text-align: center; height: 35px}
+       .inputNumber {width: 165px; height: 25px}
+       .upbutton {background: #436cbc; color: white; font-size: 15pt; margin: 0px 0px -2px 1px;}
+       .textarea {top:10px; bottom:10px; position:absolute;}
+      </style>
+
+
+
+
+
+        <!-- Mobile Configurations
+        ======================================================================== -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+        <!-- fav and icons for Mobile
+        ======================================================================== -->
+
+
+        <!-- Google Fonts
+        ======================================================================== -->
+        <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600|Roboto:100,100i,300,300i,400,400i,500,700&amp;subset=cyrillic" rel="stylesheet"> -->
+
+        <!--  CSS Files
+        ======================================================================== -->
+
+        <link rel="stylesheet" href="/static/js/vendor/bootstrap/css/bootstrap.min.css">
+
+
+        <link rel="stylesheet" href="/static/css/style2.css">
+        <link rel="stylesheet" href="/static/css/css/blue.css">
+
+
+
+
+
+        <!--  Head JS Libs
+        ======================================================================== -->
+        <script src="/static/js/vendor/modernizr-custom.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+
+
+        {% block javascript %}
+
+          <script>
+          var str2 = "EDIT:";
+          function vala7(data) {
+          str2 += data;
+          str2 += ":"}
+          function vala6(data) {
+          vala(str2);
+          str2 = "EDIT:";}
+
+          function vala5(data) {
+          var str2 = "searchaddtable:";
+          str2 += data;
+          vala(str2);
+          }
+
+          var str1 = "addstring:"
+          function vala3(data) {
+          str1 += data;
+          str1 += ":"}
+          function vala4(data) {
+          vala(str1);
+          console.log(str1)
+          str1 = "addstring:";}
+
+          var str = "createTable:";
+          function vala1(data) {
+          str += data;
+          str += ":"}
+          function vala2(data) {
+          vala(str);
+          str = "createTable:";}
+
+            function vala(data) {
+
+                // создаем AJAX-вызов
+                $.ajax({
+                        type: "POST",
+                          data: {
+                              "data": data,
+                              csrfmiddlewaretoken: '{{ csrf_token }}',
+                            }, // получаяем данные формы
+                          url: "http://127.0.0.1:8000/calculator/",
+                          // если успешно, то
+                          success: function (response) {
+<!--                           document.getElementById("myinput").value = ""-->
+                           var str = "";
+
+                            for(k in response) {
+                                if (k == 'name0'){
+                                str += response[k];}
+                                else {
+                                str = str}
+                            }
+
+                            for(k in response) {
+                                if (k == 'add'){
+                                    str += response[k];}
+                                else {
+                                str = str}
+                            }
+
+                            for(k in response) {
+                                if (k == 'add1'){
+                                    str += response[k];}
+                                else {
+                                str = str}
+                            }
+
+                            for(k in response) {
+                                if (k == 'name0' || k == 'add' || k == 'add1' || k == 'addButton' || k == 'actionButton'){
+                                str = str;}
+                                else {
+                                str += response[k];}
+                            }
+                            if (k == 'addButton'){
+                            document.getElementById("demo1").innerHTML = response['addButton'];}
+                            else {document.getElementById("demo1").innerHTML = "";}
+
+                            if (k == 'actionButton'){
+                            document.getElementById("demo2").innerHTML = response['actionButton'];}
+                            else {document.getElementById("demo2").innerHTML = "";}
+
+                            document.getElementById("demo").innerHTML = str
+
+                          },
+                          // если ошибка, то
+                          error: function (response) {
+                              // предупредим об ошибке
+                              alert("Ошибка")
+                              console.log(response.responseJSON.errors)
+                          }
+
+                      });
+                      return false;
+                    }
+
+          </script>
+        {% endblock javascript %}
+
+
+    </head><!-- /End head -->
+
+    <!-- body
+    ============================================================================ -->
+    <body class="nbs-10" data-spy="scroll" data-target=".header-menu-container" data-offset="61">
+
+		<!-- UP Button
+        ======================================================================== -->
+        <div id="up-button"><a href="#" title="To Top"><i class="fa fa-angle-up"></i></a></div>
+
+        <!-- Main Wrapper
+        ======================================================================== -->
+        <div id="main-wrapper">
+            <div class="col-md-2">
+                <a href="{% url 'start_page' %}" type="submit" class="btn btn-lpbuilder wave-effect">вернуться на главную</a>
+            </div>
+            <div class="col-md-2">
+                <button onclick="vala('help1')" type="submit" class="btn btn-lpbuilder wave-effect" >Показать добавленные</button>
+            </div>
+            <div align="right" class="col-md-8">
+                <a onclick="vala('logout')" href="{% url 'index' %}" type="submit" class="btn btn-lpbuilder wave-effect">Выйти</a>
+            </div>
+
+
+
+        <!-- Subscribe 1
+            ==================================================================== -->
+            <!-- /End Subscribe 1 --><!-- Subscribe 1
+            ==================================================================== -->
+<!--            <div id="subscribe-section-1" class="subscribe-section white-section">-->
+<!--                &lt;!&ndash; Section Container &ndash;&gt;-->
+
+<!--                    &lt;!&ndash; container &ndash;&gt;-->
+<!--                    <div class="container">-->
+<!--                        &lt;!&ndash; row &ndash;&gt;-->
+
+<!--                        <div class="row">-->
+
+
+<!--                            &lt;!&ndash; Title Block &ndash;&gt;-->
+
+
+
+<!--                            &lt;!&ndash; Subscribe Form Block &ndash;&gt;-->
+<!--                            <div class="col-lg-8 col-lg-offset-9 col-md-12 form-block subscribe-form-block">-->
+<!--                                &lt;!&ndash; Form Block Container &ndash;&gt;-->
+<!--                                <div class="form-block-container text-center">-->
+
+<!--                                        &lt;!&ndash; кнопка создания новых таблиц с добавлением в sprav_name &ndash;&gt;-->
+<!--&lt;!&ndash;                                        <div class="col-md-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <div class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <p>количество столбцов</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <input id="numberAdd" type="number" class="inputNumber" value="1" min="1">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <button onclick="vala('ADD:'+document.getElementById('numberAdd').value)" id="ButtonSearch" type="submit" class="btn btn-lpbuilder wave-effect" >Создать таблицу</button>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                                            </div>&ndash;&gt;-->
+
+<!--                                        </div>-->
+<!--                                       &lt;!&ndash; /End Submit Button &ndash;&gt;-->
+
+
+
+
+<!--                                </div>&lt;!&ndash; /End Form Block Container&ndash;&gt;-->
+<!--                            </div>&lt;!&ndash; /End Subscribe Form Block &ndash;&gt;-->
+
+
+<!--                        </div>&lt;!&ndash; /End row &ndash;&gt;-->
+
+
+<!--                    </div>&lt;!&ndash; /End container &ndash;&gt;-->
+
+
+
+
+             <div id="subscribe-section-1" class="subscribe-section white-section">
+                <!-- Section Container -->
+
+                    <!-- container -->
+                    <div class="container">
+                        <!-- row -->
+                        <div class="row">
+
+
+                            <!-- Title Block -->
+                            <div class="col-lg-10 col-lg-offset-1 col-md-12 title-block">
+                                <!-- Title Block Container -->
+                                <div class="title-block-container text-center">
+
+                                    <!-- Title -->
+                                    <h2>страница для редактирования справочников</h2>
+
+                                    <!-- Line Separator -->
+                                    <div class="line-separator"></div>
+
+                                </div><!-- /End Title Block Container -->
+                            </div><!-- /End Title Block -->
+
+                            <!-- Subscribe Form Block -->
+                            <div class="col-lg-8 col-lg-offset-2 col-md-12 form-block subscribe-form-block">
+                                <!-- Form Block Container -->
+                                <div class="form-block-container text-center">
+
+
+                                        <!-- Email -->
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control subscribe-email" name="SEARCH" id="myinput">
+                                                <label>название справочника или данные которые находятся в справочнике</label>
+                                            </div>
+                                        </div><!-- /End Email -->
+
+                                        <!-- Submit Button -->
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <button  onclick="vala('searchaddtable:' + document.getElementById('myinput').value)" id="ButtonSearch" type="submit" class="btn btn-lpbuilder wave-effect" >Поиск</button>
+<!--                                                <button  onclick="vala('searchalltable:' + document.getElementById('myinput').value)" id="ButtonSearch1" type="submit" class="btn btn-lpbuilder wave-effect" >Поиск по всем таблицам</button>-->
+                                            </div>
+                                       <!-- /End Submit Button -->
+
+
+
+
+                                </div><!-- /End Form Block Container-->
+                            </div><!-- /End Subscribe Form Block -->
+
+
+
+
+
+                </div><!-- /End Section Container -->
+            </div><!-- /End Subscribe 1 --></div><!-- /End Main Wrapper -->
+                        <div id="demo2" align="center"></div>
+                        <table id="demo" align="center"></table>
+                        <div id="demo1" align="center"></div>
+
+        <!-- Java Script Files
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        ======================================================================== -->
+        <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/static/js/vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/static/js/plugins/mobile/mobile.min.js"></script>
+        <script type="text/javascript" src="/static/js/plugins/mobile/mobile.min.js"></script>
+		<script type="text/javascript" src="https://lpbuilder.pro/js/app.js"></script>
+
+             </div></div></body></html>
